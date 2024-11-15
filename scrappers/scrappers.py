@@ -31,7 +31,11 @@ class FilmwebScraper(Scraper):
     def initialize(self)->None:
         self.pr = sync_playwright().start()
         self.browser = self.pr.firefox.launch()
-        self.page = self.browser.new_page()
+        self.context = self.browser.new_context(locale="en-GB", record_video_dir="records", record_video_size={"width": 3840, "height": 2160}, viewport={
+                'width': 3840,  # Set the width of the viewport
+                'height': 2160  # Set the height of the viewport
+            })
+        self.page = self.context.new_page()
         self.page.goto(self.url)
         self.page.wait_for_load_state("domcontentloaded")
 
