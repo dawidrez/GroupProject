@@ -1,9 +1,9 @@
 from film_saver import FilmSaver
-from scrappers import FilmwebScraper
+from scrappers import FilmwebScraper, IMDBScraper
 
 if __name__ == '__main__':
-    scrapper = FilmwebScraper()
+    scrapper = IMDBScraper()
     scrapper.scrape()
     films = scrapper.get_films()
-    saver = FilmSaver(films, "filmweb")
+    saver = FilmSaver(films, "imdb")
     saver.save()

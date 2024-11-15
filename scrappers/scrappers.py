@@ -28,19 +28,24 @@ class FilmwebScraper(Scraper):
         self.page = None
         self.films = []
 
-    def initialize(self)->None:
+    def initialize(self) -> None:
         self.pr = sync_playwright().start()
         self.browser = self.pr.firefox.launch()
-        self.page = self.browser.new_page()
+        self.context = self.browser.new_context(locale="en-GB", record_video_dir="records",
+                                                record_video_size={"width": 3840, "height": 2160}, viewport={
+                'width': 3840,  # Set the width of the viewport
+                'height': 2160  # Set the height of the viewport
+            })
+        self.page = self.context.new_page()
         self.page.goto(self.url)
         self.page.wait_for_load_state("domcontentloaded")
 
-    def close(self)->None:
+    def close(self) -> None:
         self.page.close()
         self.browser.close()
         self.pr.stop()
 
-    def accept_cookies(self)->None:
+    def accept_cookies(self) -> None:
         self.random_wait()
         self.page.click("xpath=//*[@id='didomi-notice-agree-button']")
 
@@ -57,17 +62,17 @@ class FilmwebScraper(Scraper):
         film_rating = self.convert_rating(selector.query_selector(".rankingType__rate--value").text_content())
         self.films.append(Film(name=film_name, rating=film_rating, year=year))
 
-    def scrape_films(self)->None:
+    def scrape_films(self) -> None:
         selectors = self.page.query_selector_all(".rankingType__card")
         for selector in selectors:
             self.scrape_film(selector)
 
-    def scroll_to_bottom(self)->None:
+    def scroll_to_bottom(self) -> None:
         current_height = 0
         while True:
             height = self.page.evaluate("document.body.scrollHeight")
-            while current_height<height:
-                delta_y  = random.randint(400, 600)
+            while current_height < height:
+                delta_y = random.randint(400, 600)
                 self.page.mouse.wheel(delta_x=0, delta_y=delta_y)
                 current_height += delta_y
                 self.random_wait()
@@ -75,12 +80,64 @@ class FilmwebScraper(Scraper):
             if height == new_height:
                 break
 
+    def scrape(self) -> None:
+        self.initialize()
+        self.accept_cookies()
+        self.scroll_to_bottom()
+        self.scrape_films()
+        self.close()
+
+    def get_films(self) -> list[Film]:
+        return self.films
+
+
+class IMDBScraper(Scraper):
+
+    url = "https://www.imdb.com/chart/top/?ref_=nv_mv_250"
+
+
+
+
+    def __init__(self):
+        self.pr = None
+        self.browser = None
+        self.page = None
+        self.films = []
+
+    def initialize(self)->None:
+        self.pr = sync_playwright().start()
+        self.browser = self.pr.firefox.launch()
+        self.context = self.browser.new_context(locale="en-GB", record_video_dir="records", record_video_size={"width": 3840, "height": 2160}, viewport={
+                'width': 3840,  # Set the width of the viewport
+                'height': 2160  # Set the height of the viewport
+            })
+        self.page = self.context.new_page()
+        self.page.goto(self.url)
+        self.page.wait_for_load_state("domcontentloaded")
+
+    def close(self)->None:
+        self.page.close()
+        self.browser.close()
+        self.pr.stop()
+
+
+    def scrape_film(self, selector: ElementHandle):
+        original_title = selector.query_selector(".ipc-title__text").text_content().split(" ", 1)[1]
+        rating = selector.query_selector(".ipc-rating-star--rating").text_content()
+        year = selector.query_selector_all(".sc-5bc66c50-6.OOdsw.cli-title-metadata-item")[0].text_content()
+        self.films.append(Film(name=original_title, rating=float(rating), year=int(year)))
+
+    def scrape_films(self)->None:
+        selectors = self.page.query_selector_all(".sc-5bc66c50-0.bZBaVw.cli-children")
+        for selector in selectors:
+            try:
+                self.scrape_film(selector)
+            except IndexError:
+                break
 
 
     def scrape(self)->None:
         self.initialize()
-        self.accept_cookies()
-        self.scroll_to_bottom()
         self.scrape_films()
         self.close()
 
