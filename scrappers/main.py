@@ -6,4 +6,4 @@ if __name__ == '__main__':
     scrapper.scrape()
     films = scrapper.get_films()
     saver = FilmSaver(films, "imdb")
-    saver.save()
+    saver.save_as_csv()

@@ -121,20 +121,36 @@ class IMDBScraper(Scraper):
         self.pr.stop()
 
 
-    def scrape_film(self, selector: ElementHandle):
-        original_title = selector.query_selector(".ipc-title__text").text_content().split(" ", 1)[1]
-        rating = selector.query_selector(".ipc-rating-star--rating").text_content()
-        year = selector.query_selector_all(".sc-5bc66c50-6.OOdsw.cli-title-metadata-item")[0].text_content()
-        self.films.append(Film(name=original_title, rating=float(rating), year=int(year)))
+    def scrape_film(self, url: str)->None:
+        try:
+            self.random_wait()
+            full_url = f"https://www.imdb.com{url}"
+            self.page.goto(full_url)
+            self.page.wait_for_load_state("domcontentloaded")
+            self.page.screenshot(path=f"records/{self.page.title()}.png")
+            information_selector = self.page.query_selector(".sc-70a366cc-0.bxYZmb")
+            english_title =  information_selector.query_selector(".hero__primary-text").text_content()
+            year = information_selector.query_selector(".ipc-link.ipc-link--baseAlt.ipc-link--inherit-color").text_content()
+            try: 
+                original_title = information_selector.query_selector(".sc-ec65ba05-1.fUCCIx").text_content()
+            except Exception as e:
+                print(e)
+                original_title = english_title
+            rating = self.page.query_selector(".sc-d541859f-1.imUuxf").text_content()
+            self.films.append(Film(original_title=original_title, english_title=english_title, rating=float(rating), year=int(year)))
+        except Exception as e:
+            print(e)
+            print(url)
 
     def scrape_films(self)->None:
-        selectors = self.page.query_selector_all(".sc-5bc66c50-0.bZBaVw.cli-children")
+        selectors = self.page.query_selector_all(".sc-6ade9358-0.ktYEKX.cli-children")
+        film_urls = []
+        print(len(selectors))
         for selector in selectors:
-            try:
-                self.scrape_film(selector)
-            except IndexError:
-                break
-
+            film_urls.append(selector.query_selector(".ipc-title-link-wrapper").get_attribute("href"))
+        for url in film_urls:
+            self.scrape_film(url)
+        
 
     def scrape(self)->None:
         self.initialize()
