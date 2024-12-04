@@ -13,7 +13,7 @@ class FilmSaver:
                 file.write(f"{film}\n")
 
     def save_as_csv(self) -> None:
-        with open(f"films/{self.website}_films.csv", "w") as file:
+        with open(f"films/{self.website}_films.csv", "a") as file:
             file.write("original_title,english_title,rating,year\n")
             for film in self.films:
                 file.write(f"{film.to_csv()}\n")

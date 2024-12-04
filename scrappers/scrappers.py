@@ -122,7 +122,6 @@ class IMDBScraper(Scraper):
 
 
     def scrape_film(self, url: str)->None:
-        try:
             self.random_wait()
             full_url = f"https://www.imdb.com{url}"
             self.page.goto(full_url)
@@ -133,19 +132,16 @@ class IMDBScraper(Scraper):
             year = information_selector.query_selector(".ipc-link.ipc-link--baseAlt.ipc-link--inherit-color").text_content()
             try: 
                 original_title = information_selector.query_selector(".sc-ec65ba05-1.fUCCIx").text_content()
-            except Exception as e:
-                print(e)
+                original_title = original_title[15:] # remove "Original title:"
+
+            except Exception:
                 original_title = english_title
             rating = self.page.query_selector(".sc-d541859f-1.imUuxf").text_content()
             self.films.append(Film(original_title=original_title, english_title=english_title, rating=float(rating), year=int(year)))
-        except Exception as e:
-            print(e)
-            print(url)
 
     def scrape_films(self)->None:
         selectors = self.page.query_selector_all(".sc-6ade9358-0.ktYEKX.cli-children")
         film_urls = []
-        print(len(selectors))
         for selector in selectors:
             film_urls.append(selector.query_selector(".ipc-title-link-wrapper").get_attribute("href"))
         for url in film_urls:
