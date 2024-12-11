@@ -60,7 +60,7 @@ class FilmwebScraper(Scraper):
         else:
             film_name = original_title[:-5]
         film_rating = self.convert_rating(selector.query_selector(".rankingType__rate--value").text_content())
-        self.films.append(Film(name=film_name, rating=film_rating, year=year))
+        self.films.append(Film(original_title=film_name, english_title="", rating=film_rating, year=year))
 
     def scrape_films(self) -> None:
         selectors = self.page.query_selector_all(".rankingType__card")

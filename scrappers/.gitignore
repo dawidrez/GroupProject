@@ -20,7 +20,7 @@ MANIFEST
 
 # Environments
 .env
-.venv
+.
 env/
 venv/
 ENV/
@@ -36,4 +36,3 @@ venv.bak/
 __pycache__/
 
 /records
-/films
