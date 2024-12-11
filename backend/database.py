@@ -1,9 +1,9 @@
-
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 import os
+
 from dotenv import load_dotenv
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 load_dotenv()
 
@@ -16,6 +16,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Initialize SQLAlchemy object
 db = SQLAlchemy()
+
 
 def init_db(app):
     """Bind SQLAlchemy to the Flask app and create tables."""

@@ -1,8 +1,9 @@
 import os
-from flask import Flask
-from dotenv import load_dotenv
+
 from app.routes import film
-from database import db, init_db
+from database import init_db
+from dotenv import load_dotenv
+from flask import Flask
 
 load_dotenv()
 
