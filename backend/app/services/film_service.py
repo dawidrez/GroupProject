@@ -1,7 +1,7 @@
-from sqlalchemy.orm import Session
+from app.models import Film
+from database import SessionLocal
 
-from ..models import Film
-
-def get_all_films(session: Session):
+def get_all_films():
     """Fetch all films from the database."""
-    return session. Film.query.all()
+    with SessionLocal() as session:
+        return session.query(Film).all()
