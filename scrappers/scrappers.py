@@ -53,17 +53,32 @@ class FilmwebScraper(Scraper):
         return float(rating.replace(",", "."))
 
     def scrape_film(self, selector: ElementHandle):
-        original_title = selector.query_selector(".rankingType__originalTitle").text_content()
+        film_card = selector.query_selector(".rankingType__card")
+
+        film_genres = film_card.query_selector_all(".rankingGerne")
+        genres = []
+
+        for genre in film_genres:
+            genres.append(genre.text_content())
+
+        genres = ";".join(genres)
+
+        original_title = film_card.query_selector(".rankingType__originalTitle").text_content()
+        print(original_title)
+
+        film_poster_src = selector.query_selector("div.efficientPoster img").get_attribute('src')
+
+        original_title = film_card.query_selector(".rankingType__originalTitle").text_content()
         year = original_title[-4:]
         if original_title == year:
-            film_name = selector.query_selector(".rankingType__title").text_content().split(" ", 1)[1]
+            film_name = film_card.query_selector(".rankingType__title").text_content().split(" ", 1)[1]
         else:
             film_name = original_title[:-5]
-        film_rating = self.convert_rating(selector.query_selector(".rankingType__rate--value").text_content())
-        self.films.append(Film(original_title=film_name, english_title="", rating=film_rating, year=year))
+        film_rating = self.convert_rating(film_card.query_selector(".rankingType__rate--value").text_content())
+        self.films.append(Film(original_title=film_name, english_title="", rating=film_rating, year=year, film_poster=film_poster_src, genres=genres))
 
     def scrape_films(self) -> None:
-        selectors = self.page.query_selector_all(".rankingType__card")
+        selectors = self.page.query_selector_all(".rankingType")
         for selector in selectors:
             self.scrape_film(selector)
 
