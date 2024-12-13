@@ -26,7 +26,6 @@ def load_films_from_csv(csv_file_path):
                 session.add(genre)
             genres.append(genre)
 
-        print(f"genres!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11 {genres}")
         film = Film(
             id=uuid.uuid4(),
             original_title=row["original_title"],
