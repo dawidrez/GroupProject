@@ -16,7 +16,7 @@ session = Session()
 
 def load_films_from_csv(csv_file_path):
     # Read the CSV file
-    df = pd.read_csv(csv_file_path)
+    df = pd.read_csv(csv_file_path, ";")
 
     # Iterate over the DataFrame and insert each row into the database
     for _, row in df.iterrows():
