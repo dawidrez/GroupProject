@@ -33,7 +33,6 @@ def upgrade() -> None:
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("name"),
     )
-    op.drop_table("user")
     op.add_column("film", sa.Column("src", sa.String(), nullable=False))
     op.create_unique_constraint(None, "film", ["src"])
     # ### end Alembic commands ###
