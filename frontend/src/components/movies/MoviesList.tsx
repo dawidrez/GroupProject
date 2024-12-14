@@ -1,18 +1,36 @@
+/* eslint-disable indent */
 import React, { useEffect, useState } from 'react';
-import { Card, Flex, Image, Input, Rate, Typography } from 'antd';
-import { movies } from '../../../movies';
+import { Card, Flex, Image, Input, Rate, Typography, Spin } from 'antd';
 import { Movie } from '../../models/Movies.model';
 import { Controller, useForm } from 'react-hook-form';
+import { getFilms } from '../../services/filmsService';
 
 export const MoviesList = () => {
-  const [moviesList, setMoviesList] = useState<Movie[]>(movies);
+  const [moviesList, setMoviesList] = useState<Movie[]>([]);
+  const [allMovies, setAllMovies] = useState<Movie[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const { control, watch } = useForm();
 
   const search: string = watch('search');
 
   useEffect(() => {
+    setIsLoading(true);
+    getFilms()
+      .then((res) => {
+        setMoviesList(res.data);
+        setAllMovies(res.data);
+      },
+      )
+      .catch((e) => console.error(e))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  useEffect(() => {
     if (search) {
-      setMoviesList(() => movies.filter((movie) => movie.englishName.toLowerCase().includes(search.toLowerCase())));
+      setMoviesList(() => moviesList.filter((movie) => movie.original_title.toLowerCase().includes(search.toLowerCase())));
+    } else {
+      setMoviesList(allMovies);
     }
   }, [search]);
 
@@ -39,37 +57,48 @@ export const MoviesList = () => {
               onChange={(e) => field.onChange(e.target.value)}/>
           )}/>
       </Flex>
-      <Flex style={{ maxWidth: '60%'}} vertical gap={30} >
-        {
-          moviesList.map((movie) => {
-            return (
-              <Card key={movie.originalName}>
-                <Flex
-                  align='center'
-                  gap={20}
-                  key={movie.originalName}>
-                  <Image
-                    src='https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_640.jpg'
-                    height={150}/>
-                  <Flex vertical align='flex-start' style={{ height: '100%'}}>
-                    <Typography.Title level={3}>
-                      {movie.englishName}
-                    </Typography.Title>
-                    <Flex vertical gap={10}>
-                      <Typography>Filmbeb rate</Typography>
-                      <Rate count={10} value={movie.ratingFilmweb} disabled allowHalf/>
-                      <Typography>Imb rate</Typography>
-                      <Rate count={10} value={movie.ratingImdb} disabled allowHalf/>
-                      <Typography>Filmbeb rate</Typography>
-                      <Rate count={10} value={movie.ratingImdb} disabled allowHalf/>
+      {
+        isLoading ? <Spin size='large'/> :
+        <Flex style={{ maxWidth: '60%'}} vertical gap={30}>
+          {
+              moviesList.map((movie, i) => {
+                return (
+                  <Card key={i}>
+                    <Flex
+                      align='center'
+                      gap={20}
+                      key={movie.id}>
+                      <Image
+                        src={`${movie.src}`}
+                        height={250}/>
+                      <Flex vertical align='flex-start' style={{ height: '100%'}}>
+                        <Flex gap={5} vertical style={{ paddingBottom: 10 }}>
+                          <Typography.Title level={3} style={{ margin: 0 }}>
+                            {movie.original_title}
+                          </Typography.Title>
+                          <Flex gap={20}>
+                            <Typography.Text strong>{movie.year}</Typography.Text>
+                            {
+                              movie.genres.map((genre) => <Typography.Text strong key={genre.id}>{genre.name}</Typography.Text>)
+                            }
+                          </Flex>
+                        </Flex>
+                        <Flex vertical gap={10}>
+                          <Typography>Filmbeb rate</Typography>
+                          <Rate count={10} value={movie.filmweb_rating} disabled allowHalf/>
+                          <Typography>Imb rate</Typography>
+                          <Rate count={10} value={movie.filmweb_rating} disabled allowHalf/>
+                          <Typography>Filmbeb rate</Typography>
+                          <Rate count={10} value={movie.filmweb_rating} disabled allowHalf/>
+                        </Flex>
+                      </Flex>
                     </Flex>
-                  </Flex>
-                </Flex>
-              </Card>
-            );
-          })
-        }
-      </Flex>
+                  </Card>
+                );
+              })
+            }
+        </Flex>
+      }
     </Flex>
   );
 };

@@ -1,7 +1,10 @@
 export interface Movie {
-  originalName: string;
-  englishName: string;
+  id: string;
+  original_title: string;
+  english_title: string;
   year: number;
-  ratingFilmweb: number;
-  ratingImdb: number;
+  filmweb_rating: number;
+  imdb_rating: number;
+  src: string;
+  genres: { id: string, name: string }[];
 }
