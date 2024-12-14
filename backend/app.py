@@ -4,6 +4,7 @@ from app.routes import film
 from database import init_db
 from dotenv import load_dotenv
 from flask import Flask
+from flask_cors import CORS
 
 load_dotenv()
 
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+CORS(app) 
 # Initialize the database
 init_db(app)
 

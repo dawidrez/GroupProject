@@ -21,6 +21,7 @@ class FilmSchema(BaseModel):
     filmweb_rating: Optional[float]
     imdb_rating: Optional[float]
     genres: List[GenreSchema]
+    src: str
 
     class Config:
         orm_mode = True
