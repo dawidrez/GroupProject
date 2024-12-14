@@ -21,8 +21,8 @@ class Film(Base):
     original_title: Mapped[str] = mapped_column(nullable=False, unique=True)
     english_title: Mapped[str | None] = mapped_column(nullable=True)
     year: Mapped[int] = mapped_column(nullable=False)
-    filmweb_rating: Mapped[float] = mapped_column(Numeric(precision=2), nullable=True)
-    imdb_rating: Mapped[float] = mapped_column(Numeric(precision=2), nullable=True)
+    filmweb_rating: Mapped[float|None] = mapped_column(Numeric(precision=2), nullable=True)
+    imdb_rating: Mapped[float|None] = mapped_column(Numeric(precision=2), nullable=True)
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
     src: Mapped[str] = mapped_column(unique=True)
 

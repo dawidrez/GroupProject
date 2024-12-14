@@ -17,7 +17,6 @@ def load_films_from_csv(csv_file_path):
 
     for _, row in df.iterrows():
         genre_names = [name.strip() for name in row["genres"].split(",")]
-        print(genre_names)
         genres = []
         for name in genre_names:
             genre = session.query(Genre).filter_by(name=name).first()
