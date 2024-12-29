@@ -15,4 +15,4 @@ class Film:
         return f"{self.original_title} {self.year} - {self.rating}"
 
     def to_csv(self) -> str:
-        return f"{self.original_title},{self.english_title},{self.rating},{self.year},{self.film_poster},{self.genres}"
+        return f"{self.original_title};{self.english_title};{self.rating};{self.year};{self.film_poster};{self.genres}"
