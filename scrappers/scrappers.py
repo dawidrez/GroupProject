@@ -12,6 +12,10 @@ class Scraper(ABC):
     def scrape_ranking(self) -> None:
         pass
 
+    @abstractmethod
+    def scrape_films_by_titles(self, titles: list[str]) -> None:
+        pass
+
     def random_wait(self) -> None:
         random_number = random.uniform(0.3, 0.8)
         sleep(random_number)
@@ -221,12 +225,7 @@ class IMDBScraper(Scraper):
         self.browser.close()
         self.pr.stop()
 
-    def scrape_film(self, url: str) -> None:
-        self.random_wait()
-        full_url = f"https://www.imdb.com{url}"
-        self.page.goto(full_url)
-        self.page.wait_for_load_state("domcontentloaded")
-        self.page.screenshot(path=f"records/{self.page.title()}.png")
+    def scrape_film_information(self):
         information_selector = self.page.query_selector(".sc-70a366cc-0.bxYZmb")
         english_title = information_selector.query_selector(
             ".hero__primary-text"
@@ -249,8 +248,17 @@ class IMDBScraper(Scraper):
                 english_title=english_title,
                 rating=float(rating),
                 year=int(year),
+                genres="",
+                film_poster="",
             )
         )
+
+    def scrape_film(self, url: str) -> None:
+        self.random_wait()
+        full_url = f"https://www.imdb.com{url}"
+        self.page.goto(full_url)
+        self.page.wait_for_load_state("domcontentloaded")
+        self.scrape_film_information()
 
     def scrape_films(self) -> None:
         selectors = self.page.query_selector_all(".sc-6ade9358-0.ktYEKX.cli-children")
@@ -262,10 +270,38 @@ class IMDBScraper(Scraper):
         for url in film_urls:
             self.scrape_film(url)
 
-    def scrape(self) -> None:
+    def scrape_ranking(self) -> None:
         self.initialize()
         self.scrape_films()
         self.close()
 
     def get_films(self) -> list[Film]:
         return self.films
+
+    def scrape_film_by_title(self, title: str) -> None:
+        self.random_wait()
+        self.page.fill("#suggestion-search", title)
+        # wait before searching
+        sleep(5)
+        self.random_wait()
+        self.page.keyboard.press("Enter")
+        self.page.wait_for_load_state("load")
+        self.random_wait()
+        sleep(2)
+        self.page.query_selector(".ipc-metadata-list-summary-item__t").click()
+        self.page.wait_for_load_state("domcontentloaded")
+        sleep(3)
+        self.scrape_film_information()
+
+    def scrape_films_by_titles(self, titles: list[str]) -> None:
+        self.initialize()
+        counter = 0
+        for title in titles:
+            counter += 1
+            print(title)
+            try:
+                self.scrape_film_by_title(title)
+            except Exception as e:
+                print(e)
+            if counter == 35:
+                break

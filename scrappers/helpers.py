@@ -1,7 +1,10 @@
 import pandas as pd
 from film_saver import FilmSaver
 
-from scrappers import FilmwebScraper
+from scrappers import FilmwebScraper, IMDBScraper
+
+IMDB_CSV_PATH = "films/imdb_films.csv"
+FILMWEB_CSV_PATH = "films/filmweb_films.csv"
 
 
 def find_missing_titles(csv_path_1: str, csv_path_2: str) -> list[str]:
@@ -27,9 +30,7 @@ def find_missing_titles(csv_path_1: str, csv_path_2: str) -> list[str]:
 
 
 def fulfill_filmweb_csv():
-    imdb_csv_path = "films/imdb_films.csv"
-    filmweb_csv_path = "films/filmweb_films.csv"
-    missing_titles = find_missing_titles(imdb_csv_path, filmweb_csv_path)
+    missing_titles = find_missing_titles(IMDB_CSV_PATH, FILMWEB_CSV_PATH)
     scraper = FilmwebScraper()
     scraper.scrape_films_by_titles(missing_titles)
     films = scraper.get_films()
@@ -38,16 +39,14 @@ def fulfill_filmweb_csv():
 
 
 def fulfill_imdb_csv():
-    imdb_csv_path = "films/imdb_films.csv"
-    filmweb_csv_path = "films/filmweb_films.csv"
-    missing_titles = find_missing_titles(imdb_csv_path, filmweb_csv_path)
-    scraper = FilmwebScraper()
+    missing_titles = find_missing_titles(FILMWEB_CSV_PATH, IMDB_CSV_PATH)
+    scraper = IMDBScraper()
     scraper.scrape_films_by_titles(missing_titles)
     films = scraper.get_films()
-    saver = FilmSaver(films, "filmweb")
+    saver = FilmSaver(films, "imdb")
     saver.save_as_csv()
 
 
 if __name__ == "__main__":
-    fulfill_filmweb_csv()
-    # fulfill_imdb_csv()
+    # fulfill_filmweb_csv()
+    fulfill_imdb_csv()
