@@ -306,6 +306,7 @@ class IMDBScraper(Scraper):
             if counter == 35:
                 break
 
+
 class MetacriticScrapper(Scraper):
 
     url = "https://www.metacritic.com/"  # Example film URL
@@ -331,6 +332,7 @@ class MetacriticScrapper(Scraper):
         self.page = self.context.new_page()
         self.page.goto(self.url)
         self.page.wait_for_load_state("domcontentloaded")
+        sleep(3)
 
     def close(self) -> None:
         self.page.close()
@@ -339,19 +341,20 @@ class MetacriticScrapper(Scraper):
 
     def scrape_film_from_film_page(self) -> None:
         score_box = self.page.locator('[data-testid="user-score-info"]')
-        score = score_box.locator(".c-productScoreInfo_scoreNumber.u-float-right").text_content()
+        score = score_box.locator(
+            ".c-productScoreInfo_scoreNumber.u-float-right"
+        ).text_content()
         print(score)
-        genres = self.page.query_selector(".c-genreList").text_content().split('\n')
+        genres = self.page.query_selector(".c-genreList").text_content().split("\n")
         genre_list = [genre.strip() for genre in genres if genre.strip()]
         print(genre_list)
-
 
     def get_films(self) -> list[Film]:
         return self.films
 
     def scrape_ranking(self) -> None:
         raise NotImplementedError("This scraper does not support scraping rankings.")
-    
+
     def scrape_films_by_title(self, title: str) -> None:
         self.random_wait()
         self.page.fill("input", title)
@@ -364,24 +367,29 @@ class MetacriticScrapper(Scraper):
         # Wait for the page to load
         self.page.wait_for_load_state("domcontentloaded")
 
-        # Proceed with your normal scraping flow
-        title = self.page.get_by_text(title).nth(1).text_content()
-        print(title)
-        
+        sleep(5)
         # Click the title
+        self.page.screenshot(path="1.png")
         self.page.get_by_text(title).nth(1).click()
 
         # Disable pointer events on the overlay immediately after clicking
-        self.page.evaluate("""
+        self.page.evaluate(
+            """
             const overlay = document.querySelector('.onetrust-pc-dark-filter');
             if (overlay) {
                 overlay.style.pointerEvents = 'none';  // Disable pointer events
             }
-        """)
+        """
+        )
 
         # Continue scraping after handling the overlay
         self.page.wait_for_load_state("domcontentloaded")
 
+    def accept_cookies(self) -> None:
+        self.random_wait()
+        self.page.query_selector("#onetrust-accept-btn-handler").click()
+
     def scrape_films_by_titles(self) -> None:
         self.initialize()
+        self.accept_cookies()
         self.scrape_films_by_title("The Shawshank Redemption")
