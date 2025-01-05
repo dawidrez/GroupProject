@@ -31,8 +31,7 @@ class Film(Base):  # type:ignore
     src: Mapped[str] = mapped_column(unique=True)
 
     genres: Mapped[list["Genre"]] = relationship(
-        "Genre",
-        secondary=film_genre_table,  # Use Table here
+        "Genre", secondary=film_genre_table, lazy="joined"  # Use Table here
     )
 
 

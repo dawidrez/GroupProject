@@ -14,5 +14,5 @@ def get_paginated_films(page: int, per_page: int) -> tuple[list[Film], int]:
     with SessionLocal() as session:
         query = session.query(Film)
         total_count = query.count()
-        films = query.offset((page - 1) * per_page).limit(page).all()
+        films = query.offset((page - 1) * per_page).limit(per_page).all()
         return films, total_count
