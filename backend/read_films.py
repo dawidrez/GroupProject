@@ -12,7 +12,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-def load_films_from_csv(csv_file_path):
+def load_films_from_csv(csv_file_path: str) -> None:
     df = pd.read_csv(csv_file_path, delimiter=";")
 
     for _, row in df.iterrows():

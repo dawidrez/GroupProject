@@ -15,14 +15,18 @@ film_genre_table = Table(
 )
 
 
-class Film(Base):
+class Film(Base):  # type:ignore
     __tablename__ = "film"
 
     original_title: Mapped[str] = mapped_column(nullable=False, unique=True)
     english_title: Mapped[str | None] = mapped_column(nullable=True)
     year: Mapped[int] = mapped_column(nullable=False)
-    filmweb_rating: Mapped[float|None] = mapped_column(Numeric(precision=2), nullable=True)
-    imdb_rating: Mapped[float|None] = mapped_column(Numeric(precision=2), nullable=True)
+    filmweb_rating: Mapped[float | None] = mapped_column(
+        Numeric(precision=2), nullable=True
+    )
+    imdb_rating: Mapped[float | None] = mapped_column(
+        Numeric(precision=2), nullable=True
+    )
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
     src: Mapped[str] = mapped_column(unique=True)
 
@@ -32,7 +36,7 @@ class Film(Base):
     )
 
 
-class Genre(Base):
+class Genre(Base):  # type: ignore
     __tablename__ = "genre"
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(unique=True)
