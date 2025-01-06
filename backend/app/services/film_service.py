@@ -10,14 +10,19 @@ def get_all_films() -> list[Film]:
 
 
 def get_paginated_films(
-    page: int, per_page: int, genre_name: str | None = None
+    page: int, per_page: int, genre_name: str | None = None, title: str | None = None
 ) -> tuple[list[Film], int]:
-    """Fetch paginated films from the database with optional genre filtering."""
+    """Fetch paginated films from the database with optional genre and title filtering."""
     with SessionLocal() as session:
         query = session.query(Film).options(joinedload(Film.genres))
 
         if genre_name:
-            query = query.join(Film.genres).filter(Film.genres.any(name=genre_name))
+            query = query.filter(Film.genres.any(name=genre_name))
+        if title:
+            query = query.filter(
+                Film.original_title.ilike(f"%{title}%")
+                | Film.english_title.ilike(f"%{title}%")
+            )
 
         total_count = query.count()
         films = query.offset((page - 1) * per_page).limit(per_page).all()
