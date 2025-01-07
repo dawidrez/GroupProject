@@ -5,7 +5,6 @@ from time import sleep
 from film import Film
 from playwright.sync_api import ElementHandle, sync_playwright
 
-
 class Scraper(ABC):
 
     @abstractmethod
@@ -305,3 +304,109 @@ class IMDBScraper(Scraper):
                 print(e)
             if counter == 35:
                 break
+
+
+class MetacriticScrapper(Scraper):
+
+    url = "https://www.metacritic.com/" 
+
+    def __init__(self):
+        self.pr = None
+        self.browser = None
+        self.page = None
+        self.films = []
+
+    def initialize(self) -> None:
+        self.pr = sync_playwright().start()
+        self.browser = self.pr.firefox.launch()
+        self.context = self.browser.new_context(
+            locale="en-GB",
+            record_video_dir="records",
+            record_video_size={"width": 3840, "height": 2160},
+            viewport={
+                "width": 3840, 
+                "height": 2160, 
+            },
+        )
+        self.page = self.context.new_page()
+        self.page.goto(self.url)
+        self.page.wait_for_load_state("domcontentloaded")
+        sleep(3)
+
+    def close(self) -> None:
+        self.page.close()
+        self.browser.close()
+        self.pr.stop()
+
+    def scrape_film_from_film_page(self, title: str) -> None:
+        score_box = self.page.locator('[data-testid="user-score-info"]')
+        score = score_box.locator(
+            ".c-productScoreInfo_scoreNumber.u-float-right"
+        ).text_content()
+        print(score)
+        genres_element = self.page.query_selector(".c-genreList").text_content().split("\n")
+        genre_list = [genre.strip() for genre in genres_element if genre.strip()]
+        genres = ','.join(genre_list)
+
+        year_parent = self.page.query_selector('[data-testid="hero-metadata"]')
+        year_element = year_parent.query_selector_all(".c-heroMetadata_item.u-inline")[0].text_content()
+        self.films.append(
+            Film(
+                original_title=title,
+                english_title=title,
+                rating=float(score),
+                year=int(year_element),
+                genres=genres,
+                film_poster="",
+            )
+        )
+
+    def get_films(self) -> list[Film]:
+        return self.films
+
+    def scrape_ranking(self) -> None:
+        raise NotImplementedError("This scraper does not support scraping rankings.")
+
+    def scrape_film_by_title(self, title: str) -> None:
+        self.random_wait()
+        self.page.fill("input", title)
+
+        sleep(3)
+        self.random_wait()
+        self.page.keyboard.press("Enter")
+
+        self.page.wait_for_load_state("domcontentloaded")
+
+        sleep(3)
+        clicktitle = self.page.get_by_text(title)
+        print(clicktitle)
+        try: 
+            self.page.get_by_text(title).nth(1).click()
+        except:
+            self.page.get_by_text(title).click()
+
+        self.page.wait_for_load_state("domcontentloaded")
+        self.scrape_film_from_film_page(title)
+
+
+    def accept_cookies(self) -> None:
+        self.random_wait()
+        self.page.query_selector("#onetrust-accept-btn-handler").click()
+
+    def scrape_films_by_titles(self, titles: list[str]) -> None:
+        print(titles)
+        print(len(titles))
+        self.initialize()
+        self.accept_cookies()
+        counter = 0
+
+        for title in titles:
+            counter += 1
+            print(title)
+            try:
+                self.scrape_film_by_title(title)
+            except Exception as e:
+                print(e)
+            if counter == 35:
+                break
+

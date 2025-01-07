@@ -1,10 +1,13 @@
 import pandas as pd
+import os
 from film_saver import FilmSaver
 
-from scrappers import FilmwebScraper, IMDBScraper
+from scrappers import FilmwebScraper, IMDBScraper, MetacriticScrapper
 
 IMDB_CSV_PATH = "films/imdb_films.csv"
 FILMWEB_CSV_PATH = "films/filmweb_films.csv"
+METACRITICS_CSV_PATH = "films/metacritics_films.csv"
+
 
 
 def find_missing_titles(csv_path_1: str, csv_path_2: str) -> list[str]:
@@ -28,6 +31,31 @@ def find_missing_titles(csv_path_1: str, csv_path_2: str) -> list[str]:
 
     return missing_titles
 
+def find_all_films(csv_path: str) -> list[str]:
+    # Getting only imdb movies as for metacritics english title is required
+    csv = pd.read_csv(csv_path, sep=";")
+
+    titles = set(csv["english_title"])
+
+
+    if os.path.exists(METACRITICS_CSV_PATH):
+        metacritics_csv = pd.read_csv(METACRITICS_CSV_PATH, sep=";")
+        metacritics_titles = set(metacritics_csv["original_title"])
+    else:
+        metacritics_titles = set()  
+
+    missing_metacritics_titles = list(titles - metacritics_titles)
+
+    return missing_metacritics_titles
+
+def fulfill_metacritics_films() -> list[str]:
+    missing_metacritics_titles = find_all_films(FILMWEB_CSV_PATH, IMDB_CSV_PATH)
+    scrapper = MetacriticScrapper()
+    scrapper.scrape_films_by_titles(missing_metacritics_titles)
+    films = scrapper.get_films()
+    saver = FilmSaver(films, "metacritics")
+    saver.save_as_csv()
+
 
 def fulfill_filmweb_csv():
     missing_titles = find_missing_titles(IMDB_CSV_PATH, FILMWEB_CSV_PATH)
@@ -47,6 +75,8 @@ def fulfill_imdb_csv():
     saver.save_as_csv()
 
 
+
 if __name__ == "__main__":
-    # fulfill_filmweb_csv()
+    fulfill_filmweb_csv()
     fulfill_imdb_csv()
+    # fulfill_metacritics_films()
