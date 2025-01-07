@@ -11,8 +11,11 @@ load_dotenv()
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["JSON_AS_ASCII"] = (
+    False  # Enable proper Unicode character encoding in JSON responses
+)
 
-CORS(app) 
+CORS(app)
 # Initialize the database
 init_db(app)
 

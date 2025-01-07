@@ -16,8 +16,7 @@ class Website(Enum):
     imdb = "imdb"
 
 
-def load_films_from_filmweb(csv_file_path: str) -> None:
-
+def load_films_from_csv(csv_file_path: str) -> None:
     df = pd.read_csv(csv_file_path, delimiter=";")
     required_columns = {"original_title", "genres", "year", "rating", "film_poster"}
     if not required_columns.issubset(df.columns):
