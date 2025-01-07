@@ -27,6 +27,9 @@ class Film(Base):  # type:ignore
     imdb_rating: Mapped[float | None] = mapped_column(
         Numeric(precision=2), nullable=True
     )
+    metacritic_rating: Mapped[float | None] = mapped_column(
+        Numeric(precision=2), nullable=True
+    )
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
     src: Mapped[str] = mapped_column(unique=True)
 

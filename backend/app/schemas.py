@@ -22,6 +22,7 @@ class FilmSchema(BaseModel):
     imdb_rating: Optional[float]
     genres: List[GenreSchema]
     src: str
+    metacritic_rating: Optional[float]
 
     class Config:
         orm_mode = True
