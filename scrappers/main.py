@@ -1,5 +1,5 @@
 from film_saver import FilmSaver
-from scrappers import FilmwebScraper, IMDBScraper, MetacriticScrapper
+from scrappers import FilmwebScraper, IMDBScraper
 
 if __name__ == '__main__':
     # scrapper = IMDBScraper()
