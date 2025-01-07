@@ -308,7 +308,7 @@ class IMDBScraper(Scraper):
 
 class MetacriticScrapper(Scraper):
 
-    url = "https://www.metacritic.com/"  # Example film URL
+    url = "https://www.metacritic.com/" 
 
     def __init__(self):
         self.pr = None
@@ -324,8 +324,8 @@ class MetacriticScrapper(Scraper):
             record_video_dir="records",
             record_video_size={"width": 3840, "height": 2160},
             viewport={
-                "width": 3840,  # Set the width of the viewport
-                "height": 2160,  # Set the height of the viewport
+                "width": 3840, 
+                "height": 2160, 
             },
         )
         self.page = self.context.new_page()
@@ -371,20 +371,20 @@ class MetacriticScrapper(Scraper):
         self.random_wait()
         self.page.fill("input", title)
 
-        # Wait before searching
-        sleep(5)
+        sleep(3)
         self.random_wait()
         self.page.keyboard.press("Enter")
 
-        # Wait for the page to load
         self.page.wait_for_load_state("domcontentloaded")
 
-        sleep(5)
-        # Click the title
-        self.page.screenshot(path="1.png")
-        self.page.get_by_text(title).nth(1).click()
+        sleep(3)
+        clicktitle = self.page.get_by_text(title)
+        print(clicktitle)
+        try: 
+            self.page.get_by_text(title).nth(1).click()
+        except:
+            self.page.get_by_text(title).click()
 
-        # Continue scraping after handling the overlay
         self.page.wait_for_load_state("domcontentloaded")
         self.scrape_film_from_film_page(title)
 
@@ -394,6 +394,8 @@ class MetacriticScrapper(Scraper):
         self.page.query_selector("#onetrust-accept-btn-handler").click()
 
     def scrape_films_by_titles(self, titles: list[str]) -> None:
+        print(titles)
+        print(len(titles))
         self.initialize()
         self.accept_cookies()
         counter = 0

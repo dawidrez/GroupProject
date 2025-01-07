@@ -31,26 +31,20 @@ def find_missing_titles(csv_path_1: str, csv_path_2: str) -> list[str]:
 
     return missing_titles
 
-def find_all_films(csv_path_1: str, csv_path_2: str) -> list[str]:
-    # Reading the first and second CSV files
-    first_csv = pd.read_csv(csv_path_1, sep=";")
-    second_csv = pd.read_csv(csv_path_2, sep=";")
+def find_all_films(csv_path: str) -> list[str]:
+    # Getting only imdb movies as for metacritics english title is required
+    csv = pd.read_csv(csv_path, sep=";")
 
-    first_titles = set(first_csv["original_title"])
-    second_titles = set(second_csv["english_title"])
+    titles = set(csv["english_title"])
 
-    # Combining both sets of titles
-    all_titles = first_titles | second_titles
 
-    # Check if the metacritics CSV file exists
     if os.path.exists(METACRITICS_CSV_PATH):
         metacritics_csv = pd.read_csv(METACRITICS_CSV_PATH, sep=";")
         metacritics_titles = set(metacritics_csv["original_title"])
     else:
-        metacritics_titles = set()  # Set to an empty set if the file doesn't exist
+        metacritics_titles = set()  
 
-    # Get the titles that are in all_titles but not in metacritics_titles
-    missing_metacritics_titles = list(second_titles - metacritics_titles)
+    missing_metacritics_titles = list(titles - metacritics_titles)
 
     return missing_metacritics_titles
 
@@ -81,7 +75,8 @@ def fulfill_imdb_csv():
     saver.save_as_csv()
 
 
+
 if __name__ == "__main__":
-    # fulfill_filmweb_csv()
-    # fulfill_imdb_csv()
-    fulfill_metacritics_films()
+    fulfill_filmweb_csv()
+    fulfill_imdb_csv()
+    # fulfill_metacritics_films()

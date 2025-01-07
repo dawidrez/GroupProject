@@ -1,7 +1,6 @@
 original_title;english_title;rating;year;film_poster;genres
 In the Name of the Father;In the Name of the Father;8.4;1993;;Biography,Crime,Drama
 I Am Sam;I Am Sam;6.6;2001;;Drama
-original_title;english_title;rating;year;film_poster;genres
 Hannibal;Hannibal;8.6;2013;;Crime,Drama,Horror,Mystery,Thriller
 Unforgiven;Unforgiven;8.3;1992;;Drama,Western
 American Gangster;American Gangster;7.8;2007;;Biography,Crime,Drama
@@ -63,3 +62,377 @@ Perfect Strangers;Perfect Strangers;5.7;2019;;Comedy
 The Prestige;The Prestige;8.7;2006;;Drama,Mystery,Sci-Fi,Thriller
 Into the Wild;Into the Wild;8.1;2007;;Adventure,Biography,Drama
 Stand by Me;Stand by Me;8.4;1986;;Adventure,Comedy,Drama
+There Will Be Blood;There Will Be Blood;8.8;2007;;Drama
+The Notebook;The Notebook;7.5;2004;;Drama,Romance
+Harry Potter and the Order of the Phoenix;Harry Potter and the Order of the Phoenix;7.6;2007;;Action,Adventure,Family,Fantasy,Mystery
+Alien;Alien;8.9;1979;;Horror,Sci-Fi
+The Game;The Game;7.7;1997;;Drama,Mystery,Thriller
+Tangled;Tangled;8.1;2010;;Animation,Adventure,Comedy,Family,Fantasy,Musical,Romance
+Wonder;Wonder;7.6;2017;;Drama,Family
+The Green Mile;The Green Mile;8.7;1999;;Crime,Drama,Fantasy,Mystery
+Chocolat;Chocolat;6.7;2000;;Drama,Romance
+Rush;Rush;8.4;2013;;Biography,Drama,Sport
+Falling Down;Falling Down;7.8;1993;;Crime,Drama,Thriller
+The Untouchables;The Untouchables;8.0;1987;;Crime,Drama,Thriller
+City Lights;City Lights;8.8;1931;;Comedy,Drama,Romance
+A Beautiful Mind;A Beautiful Mind;8.1;2001;;Biography,Drama,Mystery
+Madagascar;Madagascar;7.0;2005;;Animation,Adventure,Comedy,Family
+The Bourne Ultimatum;The Bourne Ultimatum;8.3;2007;;Action,Mystery,Thriller
+Desert Flower;Desert Flower;7.9;2011;;Biography,Drama
+The Thin Red Line;The Thin Red Line;8.1;1999;;Drama,History,War
+Taxi Driver;Taxi Driver;8.7;1976;;Crime,Drama
+Twelve Monkeys;Twelve Monkeys;8.0;1996;;Mystery,Sci-Fi,Thriller
+The Terminator;The Terminator;8.6;1984;;Action,Adventure,Sci-Fi
+The Peasants;The Peasants;7.7;2023;;Animation,Drama,History
+Enemy of the State;Enemy of the State;7.2;1998;;Action,Thriller
+Crash;Crash;7.2;2005;;Crime,Drama,Thriller
+The Diving Bell and the Butterfly;The Diving Bell and the Butterfly;8.4;2007;;Biography,Drama
+Rocky;Rocky;8.7;1976;;Drama,Sport
+Man on Fire;Man on Fire;7.4;2004;;Action,Crime,Drama,Thriller
+Inglourious Basterds;Inglourious Basterds;8.3;2009;;Adventure,Drama,War
+Oppenheimer;Oppenheimer;8.5;2023;;Biography,Drama,History
+Call Me by Your Name;Call Me by Your Name;8.0;2017;;Drama,Romance
+The Illusionist;The Illusionist;7.5;2006;;Drama,Fantasy,Mystery,Romance,Thriller
+Tell No One;Tell No One;7.1;2008;;Crime,Drama,Mystery,Romance,Thriller
+Corpus Christi;Corpus Christi;7.8;2020;;Drama
+Braveheart;Braveheart;8.0;1995;;Biography,Drama,War
+Some Like It Hot;Some Like It Hot;8.3;1959;;Comedy,Music,Romance
+Once Upon a Time in America;Once Upon a Time in America;8.3;1984;;Crime,Drama
+Toy Story;Toy Story;8.9;1995;;Animation,Adventure,Comedy,Family,Fantasy
+Barry Lyndon;Barry Lyndon;8.5;1975;;Adventure,Drama,War
+Batman Begins;Batman Begins;8.3;2005;;Action,Drama
+The Sound of Music;The Sound of Music;8.4;1965;;Biography,Drama,Family,Musical,Romance
+High and Low;High and Low;8.3;1963;;Crime,Drama,Mystery,Thriller
+Dracula;Dracula;7.7;2013;;Drama,Horror,Romance
+To Kill a Mockingbird;To Kill a Mockingbird;8.6;1962;;Crime,Drama
+Modern Times;Modern Times;8.7;2003;;Comedy,Drama,Romance
+A Separation;A Separation;8.9;2011;;Drama
+All About My Mother;All About My Mother;8.3;1999;;Comedy,Drama,Romance
+The Last Samurai;The Last Samurai;8.2;2003;;Action,Drama
+Love Actually;Love Actually;7.2;2003;;Comedy,Drama,Romance
+Come and See;Come and See;9.1;1987;;Drama,Thriller,War
+The Perks of Being a Wallflower;The Perks of Being a Wallflower;8.4;2012;;Drama
+Me Before You;Me Before You;6.8;2016;;Drama,Romance
+The Chorus;The Chorus;7.7;2005;;Drama,Music
+Lethal Weapon;Lethal Weapon;7.1;2016;;Action,Adventure,Comedy,Crime,Drama,Mystery,Thriller
+Coco;Coco;8.4;2017;;Animation,Adventure,Drama,Family,Fantasy,Music,Mystery
+We Were Soldiers;We Were Soldiers;6.9;2002;;Action,Drama,History,War
+The Big Lebowski;The Big Lebowski;8.4;1998;;Comedy,Crime
+The Phantom of the Opera;The Phantom of the Opera;6.5;2004;;Drama,Musical,Romance,Thriller
+Monty Python and the Holy Grail;Monty Python and the Holy Grail;8.5;1975;;Adventure,Comedy,Fantasy
+Saving Private Ryan;Saving Private Ryan;8.9;1998;;Drama,War
+August Rush;August Rush;6.8;2007;;Drama,Music
+Hacksaw Ridge;Hacksaw Ridge;8.3;2016;;Biography,Drama,History,War
+Breaking the Waves;Breaking the Waves;7.9;1996;;Drama
+Pulp Fiction;Pulp Fiction;9.1;1994;;Crime,Drama
+Spirited Away;Spirited Away;9.0;2002;;Animation,Adventure,Family,Fantasy,Mystery
+Samsara;Samsara;8.0;2012;;Documentary,Music
+Room;Room;8.2;2015;;Drama,Thriller
+The Wages of Fear;The Wages of Fear;8.3;2011;;Adventure,Drama,Thriller
+Judgment at Nuremberg;Judgment at Nuremberg;8.6;1961;;Drama,War
+American Beauty;American Beauty;8.8;1999;;Drama
+12 Angry Men;12 Angry Men;9.2;1957;;Crime,Drama
+Das Boot;Das Boot;8.6;1982;;Drama,War
+Once Upon a Time in the West;Once Upon a Time in the West;8.7;2005;;Drama,Western
+The Patriot;The Patriot;7.2;2000;;Action,Drama,History,War
+Seven;Seven;8.7;1995;;Crime,Drama,Mystery,Thriller
+The Dark Knight Rises;The Dark Knight Rises;8.5;2012;;Action,Drama,Thriller
+The Last King of Scotland;The Last King of Scotland;7.7;2006;;Biography,Drama,History,Thriller
+Wild Strawberries;Wild Strawberries;8.2;1959;;Drama,Romance
+Memoirs of a Geisha;Memoirs of a Geisha;7.0;2005;;Drama,Romance
+The Pianist;The Pianist;8.7;2002;;Biography,Drama,Music,War
+Limitless;Limitless;7.3;2011;;Sci-Fi,Thriller
+1917;1917;8.4;2019;;Action,Drama,War
+Jaws;Jaws;8.7;1975;;Adventure,Drama,Horror,Thriller
+12 Years a Slave;12 Years a Slave;8.0;2013;;Biography,Drama,History
+The Lives of Others;The Lives of Others;8.7;2006;;Drama,Mystery,Thriller
+Casablanca;Casablanca;8.7;1943;;Drama,Romance,War
+Ikiru;Ikiru;8.6;1956;;Drama
+Trainspotting;Trainspotting;8.4;1996;;Drama
+All About Eve;All About Eve;8.6;1950;;Drama
+Brothers;Brothers;6.9;2009;;Drama,Thriller,War
+Persona;Persona;8.0;1967;;Drama,Thriller
+One Day;One Day;6.2;2011;;Drama,Romance
+Frozen;Frozen;7.4;2013;;Animation,Adventure,Comedy,Family,Fantasy,Musical
+Jurassic Park;Jurassic Park;8.9;1993;;Action,Adventure,Sci-Fi,Thriller
+Back to the Future;Back to the Future;9.0;1985;;Adventure,Comedy,Sci-Fi
+Anastasia;Anastasia;7.7;1997;;Animation,Adventure,Drama,Family,Fantasy,Musical,Mystery,Romance
+The Bourne Identity;The Bourne Identity;8.0;2002;;Action,Mystery,Thriller
+Evil;Evil;6.8;2019;;Crime,Drama,Horror,Mystery,Thriller
+Iron Man;Iron Man;8.3;2008;;Action,Adventure,Sci-Fi
+Downfall;Downfall;8.7;2005;;Biography,Drama,History,War
+Logan;Logan;8.4;2017;;Action,Drama,Sci-Fi,Thriller
+Princess Mononoke;Princess Mononoke;8.9;1999;;Animation,Adventure,Fantasy
+Requiem for a Dream;Requiem for a Dream;8.4;2000;;Drama
+The Battle of Algiers;The Battle of Algiers;8.4;2004;;Drama,War
+Oldboy;Oldboy;8.6;2005;;Action,Drama,Mystery,Thriller
+In the Mood for Love;In the Mood for Love;8.5;2001;;Drama,Romance
+The Promised Land;The Promised Land;7.4;2024;;Action,Biography,Drama,History
+Sunset Boulevard;Sunset Boulevard;8.6;1950;;Drama,Film-Noir
+Shutter Island;Shutter Island;8.3;2010;;Drama,Mystery,Thriller
+Sleepers;Sleepers;7.5;1996;;Crime,Drama,Thriller
+The Graduate;The Graduate;8.3;1967;;Comedy,Drama,Romance
+No Country for Old Men;No Country for Old Men;8.5;2007;;Crime,Drama,Thriller
+Detachment;Detachment;7.9;2012;;Drama
+Captain Fantastic;Captain Fantastic;7.7;2016;;Comedy,Drama
+Murder in the First;Murder in the First;6.6;2014;;Crime,Drama,Mystery
+Spotlight;Spotlight;8.1;2015;;Biography,Crime,Drama
+The Boondock Saints;The Boondock Saints;6.1;2009;;Action,Crime,Thriller
+Forrest Gump;Forrest Gump;8.9;1994;;Drama,Romance
+Paths of Glory;Paths of Glory;8.5;1957;;Drama,War
+A Silent Voice;A Silent Voice;8.7;2017;;Animation,Drama
+The Color Purple;The Color Purple;8.2;1985;;Drama
+Mulan;Mulan;2.9;2020;;Action,Adventure,Drama,Fantasy
+Catch Me If You Can;Catch Me If You Can;8.3;2002;;Biography,Crime,Drama
+The Life of David Gale;The Life of David Gale;6.6;2003;;Crime,Drama,Mystery,Thriller
+Escape from Alcatraz;Escape from Alcatraz;7.8;1979;;Biography,Crime,Drama,Thriller
+The Straight Story;The Straight Story;8.4;1999;;Biography,Drama
+Joker;Joker;8.9;2019;;Crime,Drama,Thriller
+A Time to Kill;A Time to Kill;7.1;1996;;Crime,Drama,Thriller
+Green Street;Green Street;7.3;2005;;Crime,Drama,Sport,War
+Senna;Senna;8.7;2011;;Documentary,Biography,Sport
+The Last Family;The Last Family;6.8;2017;;Biography,Drama
+Life of Brian;Life of Brian;8.1;1979;;Comedy
+Witness for the Prosecution;Witness for the Prosecution;6.6;2016;;Crime,Drama,Mystery,Thriller
+Cinema Paradiso;Cinema Paradiso;8.9;1990;;Drama,Romance
+Fracture;Fracture;7.0;2007;;Crime,Drama,Thriller
+Aliens;Aliens;8.9;1986;;Action,Adventure,Sci-Fi,Thriller
+Papillon;Papillon;6.5;2018;;Adventure,Biography,Crime,Drama
+Rain Man;Rain Man;7.9;1988;;Drama
+Citizen Kane;Citizen Kane;8.3;1941;;Drama,Mystery
+The Elephant Man;The Elephant Man;8.7;1980;;Biography,Drama
+Raiders of the Lost Ark;Raiders of the Lost Ark;8.9;1981;;Action,Adventure
+Dances with Wolves;Dances with Wolves;8.0;1990;;Adventure,Drama,Western
+The Mission;The Mission;8.5;2023;;Documentary,Animation,Biography
+Yojimbo;Yojimbo;8.2;1961;;Action,Drama,Thriller
+A Man Escaped;A Man Escaped;8.5;2012;;Drama,Thriller,War
+About Time;About Time;7.9;2013;;Comedy,Drama,Fantasy,Romance,Sci-Fi
+The Iron Giant;The Iron Giant;8.8;1999;;Animation,Action,Adventure,Comedy,Drama,Family,Sci-Fi
+Inside Out;Inside Out;8.6;2015;;Animation,Adventure,Comedy,Drama,Family,Fantasy
+Harry Potter and the Prisoner of Azkaban;Harry Potter and the Prisoner of Azkaban;8.4;2004;;Adventure,Family,Fantasy,Mystery
+Casino Royale;Casino Royale;8.4;2006;;Action,Adventure,Thriller
+Interstellar;Interstellar;8.7;2014;;Adventure,Drama,Sci-Fi
+Capernaum;Capernaum;8.3;2018;;Drama
+The Godfather: Part II;The Godfather: Part II;7.2;1990;;Crime,Drama
+Cabaret;Cabaret;7.9;1972;;Drama,Music,Musical,Romance
+Ben-Hur;Ben-Hur;4.8;2016;;Action,Adventure,Drama,Romance
+Treasure Planet;Treasure Planet;8.2;2002;;Animation,Adventure,Family,Fantasy,Sci-Fi
+Snatch;Snatch;8.3;2001;;Comedy,Crime
+Billy Elliot;Billy Elliot;7.9;2000;;Drama,Music
+Primal Fear;Primal Fear;7.7;1996;;Crime,Drama,Mystery,Thriller
+Blood Diamond;Blood Diamond;8.2;2006;;Adventure,Drama,Thriller
+Indiana Jones and the Temple of Doom;Indiana Jones and the Temple of Doom;7.7;1984;;Action,Adventure
+Coach Carter;Coach Carter;7.7;2005;;Biography,Drama,Sport
+Deception;Deception;5.5;2013;;Crime,Drama,Mystery,Romance
+A Clockwork Orange;A Clockwork Orange;8.6;1971;;Crime,Sci-Fi
+Gran Torino;Gran Torino;8.3;2008;;Drama
+The Godfather;The Godfather;9.3;1972;;Crime,Drama
+Training Day;Training Day;8.0;2001;;Crime,Drama,Thriller
+Knives Out;Knives Out;6.1;2022;;Comedy,Crime,Drama,Mystery,Thriller
+The Fugitive;The Fugitive;8.4;1993;;Action,Crime,Drama,Mystery,Thriller
+The Fighter;The Fighter;8.1;2010;;Action,Biography,Drama,Sport
+21 Grams;21 Grams;7.6;2003;;Crime,Drama,Thriller
+Bohemian Rhapsody;Bohemian Rhapsody;7.6;2018;;Biography,Drama,Music
+Atonement;Atonement;7.9;2007;;Drama,Mystery,Romance,War
+The Theory of Everything;The Theory of Everything;7.6;2014;;Biography,Drama,Romance
+The Shawshank Redemption;The Shawshank Redemption;9.3;1994;;Drama
+Dangerous Liaisons;Dangerous Liaisons;7.8;1988;;Drama,Romance
+Dancer in the Dark;Dancer in the Dark;8.6;2000;;Crime,Drama,Musical
+Memories of Murder;Memories of Murder;8.6;2005;;Crime,Drama,Mystery,Thriller
+Seven Samurai;Seven Samurai;9.0;1956;;Action,Drama
+Interrogation;Interrogation;6.4;2020;;Crime,Drama,Thriller
+Eternal Sunshine of the Spotless Mind;Eternal Sunshine of the Spotless Mind;8.9;2004;;Drama,Romance,Sci-Fi
+The Cruise;The Cruise;7.0;1998;;Documentary
+Enemy at the Gates;Enemy at the Gates;6.8;2001;;Action,Drama,War
+Ip Man 4;Ip Man 4;6.7;2019;;Action,Biography,Drama,History
+Law Abiding Citizen;Law Abiding Citizen;6.7;2009;;Action,Crime,Drama,Thriller
+Fear and Loathing in Las Vegas;Fear and Loathing in Las Vegas;7.5;1998;;Adventure,Comedy,Drama
+The Great Beauty;The Great Beauty;8.0;2013;;Drama
+The Bone Collector;The Bone Collector;5.0;2020;;Crime,Drama,Mystery,Thriller
+Double Indemnity;Double Indemnity;8.6;1944;;Crime,Drama,Film-Noir,Mystery,Thriller
+Rashomon;Rashomon;8.4;1951;;Crime,Drama,Mystery
+Empire of the Sun;Empire of the Sun;7.7;1987;;Drama,War
+Dial M for Murder;Dial M for Murder;8.2;1954;;Crime,Thriller
+Gone with the Wind;Gone with the Wind;8.3;1940;;Drama,Romance,War
+3 Idiots;3 Idiots;8.4;2010;;Comedy,Drama
+Dirty Harry;Dirty Harry;8.2;1971;;Action,Crime,Thriller
+Rosemary's Baby;Rosemary's Baby;5.0;2014;;Drama,Horror,Mystery,Thriller
+The Truman Show;The Truman Show;8.7;1998;;Comedy,Drama
+Gifted;Gifted;7.5;2017;;Drama
+Time to Die;Time to Die;6.3;2021;;Action,Adventure,Thriller
+Network;Network;8.3;1976;;Drama
+Untouchable;Untouchable;8.5;2019;;Documentary,Biography,Crime
+Ghost in the Shell;Ghost in the Shell;7.3;2004;;Animation,Drama,Mystery,Sci-Fi,Thriller
+Jojo Rabbit;Jojo Rabbit;7.3;2004;;Animation,Drama,Mystery,Sci-Fi,Thriller
+Big Fish;Big Fish;8.1;2003;;Adventure,Drama,Fantasy,Romance
+The Return;The Return;7.3;2024;;History
+City of Angels;City of Angels;4.5;2020;;Crime,Drama,Fantasy,History,Horror,Mystery,Thriller
+Changeling;Changeling;7.6;2008;;Biography,Crime,Drama,History,Mystery,Thriller
+Memento;Memento;8.8;2001;;Mystery,Thriller
+Seven Pounds;Seven Pounds;6.8;2008;;Drama,Mystery,Thriller
+V for Vendetta;V for Vendetta;8.4;2006;;Action,Drama,Sci-Fi,Thriller
+Black Hawk Down;Black Hawk Down;7.9;2001;;Action,Drama,History,War
+Scarface;Scarface;8.7;1983;;Crime,Drama
+Song of the Sea;Song of the Sea;8.4;2014;;Animation,Adventure,Drama,Family,Fantasy
+Back to the Future Part II;Back to the Future Part II;8.3;1989;;Adventure,Comedy,Sci-Fi
+Natural Born Killers;Natural Born Killers;6.9;1994;;Crime,Romance
+Ratatouille;Ratatouille;8.5;2007;;Animation,Adventure,Comedy,Family,Fantasy
+Lawrence of Arabia;Lawrence of Arabia;8.5;2002;;Adventure,Biography,Drama,War
+Annie Hall;Annie Hall;7.1;1977;;Comedy,Romance
+Million Dollar Baby;Million Dollar Baby;8.3;2004;;Drama,Sport
+Hidden Figures;Hidden Figures;7.5;2016;;Biography,Drama,History
+The Silence of the Lambs;The Silence of the Lambs;8.8;1991;;Crime,Drama,Thriller
+The Deer Hunter;The Deer Hunter;8.1;1978;;Drama,War
+On the Waterfront;On the Waterfront;8.4;1954;;Crime,Drama,Thriller
+Fargo;Fargo;8.7;2014;;Crime,Drama,Thriller
+The Seventh Seal;The Seventh Seal;8.5;1958;;Drama,Fantasy
+The Secret in Their Eyes;The Secret in Their Eyes;8.4;2010;;Drama,Mystery,Romance,Thriller
+Fiddler on the Roof;Fiddler on the Roof;8.2;1971;;Drama,Family,Musical,Romance
+Misery;Misery;8.3;1990;;Drama,Thriller
+Tangerines;Tangerines;8.1;2015;;Drama,War
+Toy Story 3;Toy Story 3;8.8;2010;;Animation,Adventure,Comedy,Family,Fantasy
+The Father;The Father;8.6;2021;;Drama,Mystery
+The Hunt for Red October;The Hunt for Red October;7.6;1990;;Action,Adventure,Thriller
+Donnie Brasco;Donnie Brasco;7.8;1997;;Biography,Crime,Drama
+American History X;American History X;8.4;1998;;Crime,Drama
+The Grand Budapest Hotel;The Grand Budapest Hotel;8.4;2014;;Adventure,Comedy,Crime
+Harry Potter and the Goblet of Fire;Harry Potter and the Goblet of Fire;7.9;2005;;Adventure,Family,Fantasy,Mystery
+Persepolis;Persepolis;8.2;2007;;Animation,Biography,Drama,History,War
+Hotel Rwanda;Hotel Rwanda;8.1;2004;;Biography,Drama,History,War
+Dangal;Dangal;8.3;2016;;Action,Biography,Drama,Sport
+Blade Runner 2049;Blade Runner 2049;8.3;2017;;Action,Drama,Mystery,Sci-Fi,Thriller
+Edward Scissorhands;Edward Scissorhands;8.3;1990;;Drama,Fantasy,Romance
+A Fistful of Dollars;A Fistful of Dollars;8.0;1967;;Drama,Western
+Cast Away;Cast Away;7.9;2000;;Adventure,Drama,Romance
+Donnie Darko;Donnie Darko;8.7;2004;;Drama,Mystery,Sci-Fi,Thriller
+The Legend of 1900;The Legend of 1900;8.1;1999;;Drama,Music,Romance
+Shrek 2;Shrek 2;8.5;2004;;Animation,Adventure,Comedy,Family,Fantasy,Romance
+Amores perros;Amores perros;8.4;2001;;Drama,Thriller
+Philadelphia;Philadelphia;7.7;1993;;Drama
+Django Unchained;Django Unchained;8.6;2012;;Comedy,Drama,Western
+The Piano Lesson;The Piano Lesson;5.9;2024;;Drama,Music
+The Bucket List;The Bucket List;6.9;2007;;Adventure,Comedy,Drama
+Hercules;Hercules;8.0;1997;;Animation,Action,Adventure,Comedy,Family,Fantasy,Musical,Romance
+Green Book;Green Book;8.0;2018;;Biography,Comedy,Drama,Music
+Rear Window;Rear Window;8.7;1954;;Drama,Mystery,Thriller
+How to Train Your Dragon 2;How to Train Your Dragon 2;8.4;2014;;Animation,Action,Adventure,Comedy,Family,Fantasy
+Meet Joe Black;Meet Joe Black;6.9;1998;;Drama,Fantasy,Romance
+The Dark Knight;The Dark Knight;9.1;2008;;Action,Crime,Drama,Thriller
+Hamilton;Hamilton;7.7;2020;;Biography,Drama,History,Musical
+Stalker;Stalker;7.9;1982;;Drama,Sci-Fi
+For a Few Dollars More;For a Few Dollars More;8.4;1967;;Drama,Western
+The Wild Robot;The Wild Robot;8.5;2024;;Animation,Sci-Fi
+Guardians of the Galaxy Vol. 3;Guardians of the Galaxy Vol. 3;8.0;2023;;Action,Adventure,Comedy,Sci-Fi
+Dune: Part Two;Dune: Part Two;8.4;2024;;Action,Adventure,Drama,Sci-Fi
+Warrior;Warrior;8.3;2011;;Action,Drama,Sport
+Top Gun: Maverick;Top Gun: Maverick;8.4;2022;;Action,Drama
+The Wizard of Oz;The Wizard of Oz;8.4;1939;;Adventure,Family,Fantasy,Musical
+Star Wars: Episode V - The Empire Strikes Back;Star Wars: Episode V - The Empire Strikes Back;9.2;1980;;Action,Adventure,Fantasy,Sci-Fi
+A Walk to Remember;A Walk to Remember;6.5;2002;;Drama,Romance
+Three Colors: Blue;Three Colors: Blue;8.5;1993;;Drama,Music,Mystery,Romance
+Finding Neverland;Finding Neverland;7.6;2004;;Biography,Drama,Family
+L.A. Confidential;L.A. Confidential;8.5;1997;;Crime,Drama,Mystery,Thriller
+Tokyo Story;Tokyo Story;8.5;1972;;Drama
+Mr. Smith Goes to Washington;Mr. Smith Goes to Washington;7.9;1939;;Comedy,Drama
+How to Train Your Dragon;How to Train Your Dragon;8.4;2014;;Animation,Action,Adventure,Comedy,Family,Fantasy
+The Help;The Help;7.9;2011;;Drama
+Platoon;Platoon;8.1;1986;;Drama,War
+Psycho;Psycho;8.9;1960;;Horror,Mystery,Thriller
+Akira;Akira;8.4;1989;;Animation,Drama,Fantasy,Sci-Fi
+Prisoners;Prisoners;8.2;2013;;Crime,Drama,Mystery,Thriller
+Before Sunrise;Before Sunrise;8.7;1995;;Drama,Romance
+Howl's Moving Castle;Howl's Moving Castle;8.6;2005;;Animation,Adventure,Family,Fantasy
+Harakiri;Harakiri;8.6;1964;;Drama,Mystery
+Parasite;Parasite;8.9;2019;;Drama,Thriller
+Hair;Hair;7.2;1979;;Comedy,Drama,Musical,Romance,War
+Three Colors: White;Three Colors: White;8.0;1994;;Comedy,Drama,Romance
+300;300;7.1;2007;;Action,Drama
+The Lord of the Rings: The War of the Rohirrim;The Lord of the Rings: The War of the Rohirrim;5.3;2024;;Animation,Action,Adventure,Drama,Fantasy
+The Usual Suspects;The Usual Suspects;8.5;1995;;Crime,Drama,Mystery,Thriller
+Adam's Apples;Adam's Apples;7.8;2007;;Comedy,Crime,Drama
+Puss in Boots: The Last Wish;Puss in Boots: The Last Wish;8.8;2022;;Animation,Action,Adventure,Comedy,Family,Fantasy
+The Handmaiden;The Handmaiden;8.5;2016;;Drama,Romance,Thriller
+A Dog's Purpose;A Dog's Purpose;6.3;2017;;Adventure,Comedy,Drama,Family,Fantasy
+The Treasure of the Sierra Madre;The Treasure of the Sierra Madre;8.3;1948;;Adventure,Drama,Western
+Indiana Jones and the Last Crusade;Indiana Jones and the Last Crusade;8.6;1989;;Action,Adventure
+Star Wars: Episode IV - A New Hope;Star Wars: Episode IV - A New Hope;8.9;1977;;Action,Adventure,Fantasy,Sci-Fi
+Your Name.;Your Name.;8.9;2017;;Animation,Drama,Fantasy,Romance
+Singin' in the Rain;Singin' in the Rain;8.7;1952;;Comedy,Musical,Romance
+Kill Bill: Vol. 2;Kill Bill: Vol. 2;8.2;2004;;Action,Crime,Thriller
+Three Billboards Outside Ebbing, Missouri;Three Billboards Outside Ebbing, Missouri;7.8;2017;;Comedy,Crime,Drama
+Lock, Stock and Two Smoking Barrels;Lock, Stock and Two Smoking Barrels;8.3;1999;;Comedy,Crime
+Boys Don't Cry;Boys Don't Cry;7.9;1999;;Biography,Crime,Drama,Romance
+Shrek;Shrek;8.6;2001;;Animation,Adventure,Comedy,Family,Fantasy,Romance
+Black Cat, White Cat;Black Cat, White Cat;7.3;1999;;Comedy,Crime,Romance
+Paris, Texas;Paris, Texas;7.7;1984;;Drama
+Grave of the Fireflies;Grave of the Fireflies;8.9;1989;;Animation,Drama,War
+Ocean's Eleven;Ocean's Eleven;8.0;2001;;Crime,Thriller
+I Am Legend;I Am Legend;7.3;2007;;Drama,Horror,Sci-Fi,Thriller
+Cinderella Man;Cinderella Man;7.9;2005;;Biography,Drama,Romance,Sport
+The Hobbit: The Desolation of Smaug;The Hobbit: The Desolation of Smaug;7.7;2013;;Adventure,Fantasy
+Pink Floyd: The Wall;Pink Floyd: The Wall;8.4;1982;;Drama,Fantasy,Music
+Sherlock Holmes: A Game of Shadows;Sherlock Holmes: A Game of Shadows;7.4;2011;;Action,Adventure,Mystery
+The Curious Case of Benjamin Button;The Curious Case of Benjamin Button;7.8;2008;;Drama,Fantasy,Romance
+Spider-Man: No Way Home;Spider-Man: No Way Home;8.5;2021;;Action,Adventure,Fantasy,Sci-Fi
+Captain Phillips;Captain Phillips;8.1;2013;;Action,Biography,Crime,Drama,Thriller
+Raging Bull;Raging Bull;8.5;1980;;Biography,Drama,Sport
+Rebecca;Rebecca;8.5;1940;;Drama,Mystery,Romance,Thriller
+Star Wars: Episode VI - Return of the Jedi;Star Wars: Episode VI - Return of the Jedi;8.4;1983;;Action,Adventure,Fantasy,Sci-Fi
+The Bourne Supremacy;The Bourne Supremacy;7.9;2004;;Action,Thriller
+GoodFellas;GoodFellas;9.0;1990;;Biography,Crime,Drama
+Gone Girl;Gone Girl;8.1;2014;;Drama,Mystery,Thriller
+The Last of the Mohicans;The Last of the Mohicans;8.0;1992;;Action,Adventure,Drama,Romance,War,Western
+Thor: Ragnarok;Thor: Ragnarok;7.7;2017;;Action,Adventure,Comedy,Fantasy,Sci-Fi
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb;Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb;8.8;1964;;Comedy,War
+Awakenings;Awakenings;8.2;1990;;Biography,Drama
+Life Is Beautiful;Life Is Beautiful;8.3;1998;;Comedy,Drama,Romance,War
+Whiplash;Whiplash;8.8;2014;;Drama,Music
+Sweeney Todd: The Demon Barber of Fleet Street;Sweeney Todd: The Demon Barber of Fleet Street;7.8;2007;;Drama,Horror,Musical,Thriller
+Spider-Man: Into the Spider-Verse;Spider-Man: Into the Spider-Verse;8.8;2018;;Animation,Action,Adventure,Comedy,Family,Fantasy,Sci-Fi
+The Shining;The Shining;8.6;1980;;Drama,Horror
+Felon;Felon;7.0;2008;;Action,Drama,Thriller
+The Pursuit of Happyness;The Pursuit of Happyness;7.9;2006;;Biography,Drama
+Carlito's Way;Carlito's Way;8.2;1993;;Crime,Drama,Thriller
+2001: A Space Odyssey;2001: A Space Odyssey;8.7;1968;;Adventure,Sci-Fi
+Avengers: Endgame;Avengers: Endgame;8.3;2019;;Action,Adventure,Drama,Sci-Fi
+Amélie;Amélie;8.3;2001;;Comedy,Romance
+Searching for Sugar Man;Searching for Sugar Man;8.4;2012;;Documentary,Biography,Music
+The Matrix;The Matrix;8.9;1999;;Action,Sci-Fi
+The Hobbit: An Unexpected Journey;The Hobbit: An Unexpected Journey;8.0;2012;;Adventure,Fantasy
+Casino;Casino;8.3;1995;;Crime,Drama
+The Devil's Advocate;The Devil's Advocate;7.4;1997;;Drama,Fantasy,Mystery,Thriller
+Children of Heaven;Children of Heaven;7.3;1999;;Drama,Family,Sport
+Promising Young Woman;Promising Young Woman;7.2;2020;;Crime,Drama,Mystery,Thriller
+The Hunt;The Hunt;8.4;2013;;Drama
+City of God;City of God;9.0;2003;;Crime,Drama
+Isle of Dogs;Isle of Dogs;8.0;2018;;Animation,Adventure,Comedy,Drama,Fantasy,Sci-Fi
+Legends of the Fall;Legends of the Fall;7.1;1995;;Drama,Romance,War,Western
+Schindler's List;Schindler's List;9.2;1993;;Biography,Drama,History
+Mad Max: Fury Road;Mad Max: Fury Road;8.5;2015;;Action,Adventure,Sci-Fi,Thriller
+Dogville;Dogville;8.5;2004;;Crime,Drama
+Pocahontas;Pocahontas;7.1;1995;;Animation,Adventure,Drama,Family,Musical,Romance
+The World's Fastest Indian;The World's Fastest Indian;7.7;2005;;Biography,Drama,Sport
+Harry Potter and the Deathly Hallows: Part 2;Harry Potter and the Deathly Hallows: Part 2;8.3;2011;;Adventure,Family,Fantasy,Mystery
+Cool Hand Luke;Cool Hand Luke;8.3;1967;;Crime,Drama
+The Fast and the Furious;The Fast and the Furious;7.1;2001;;Action,Crime,Thriller
+My Sister's Keeper;My Sister's Keeper;6.8;2009;;Drama,Family
+Spider-Man: Across the Spider-Verse;Spider-Man: Across the Spider-Verse;8.5;2023;;Animation,Action,Adventure,Family,Fantasy,Sci-Fi
+The Blues Brothers;The Blues Brothers;8.4;1980;;Adventure,Comedy,Crime,Music,Musical
+Pan's Labyrinth;Pan's Labyrinth;8.7;2006;;Drama,Fantasy,War
+Die Hard;Die Hard;8.7;1988;;Action,Thriller
+As Good as It Gets;As Good as It Gets;7.6;1997;;Comedy,Drama,Romance
+Interview with the Vampire: The Vampire Chronicles;Interview with the Vampire: The Vampire Chronicles;7.5;1994;;Drama,Fantasy,Horror
+Good Will Hunting;Good Will Hunting;8.6;1997;;Drama,Romance
+One Flew Over the Cuckoo's Nest;One Flew Over the Cuckoo's Nest;8.8;1975;;Drama
+What's Eating Gilbert Grape;What's Eating Gilbert Grape;7.9;1994;;Drama
+Erin Brockovich;Erin Brockovich;7.7;2000;;Biography,Drama
+Breakfast at Tiffany's;Breakfast at Tiffany's;7.6;1961;;Comedy,Drama,Romance
+Gladiator;Gladiator;8.7;2000;;Action,Adventure,Drama
+Star Wars: Episode III - Revenge of the Sith;Star Wars: Episode III - Revenge of the Sith;8.0;2005;;Action,Adventure,Fantasy,Sci-Fi
+Kill Bill: Vol. 1;Kill Bill: Vol. 1;8.3;2003;;Action,Crime,Thriller
+The King's Speech;The King's Speech;8.3;2010;;Biography,Drama,History
+Dead Poets Society;Dead Poets Society;8.4;1989;;Comedy,Drama
+Girl, Interrupted;Girl, Interrupted;7.4;1999;;Biography,Drama
+K-PAX;K-PAX;7.2;2001;;Drama,Mystery,Sci-Fi
+The Third Man;The Third Man;8.4;1949;;Drama,Film-Noir,Mystery,Thriller
+The Salt of the Earth;The Salt of the Earth;8.3;2015;;Documentary,Biography,History
