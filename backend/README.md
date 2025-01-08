@@ -23,6 +23,13 @@ Once the backend is running and the films have been imported, you can access the
 ```bash
 GET: http://127.0.0.1:5000/films
 ```
+This will return the films data as a JSON response.
+
+It is possible to filter films by genre and title (both English title and original title). An example of how to filter films:
+
+```bash
+GET: http://127.0.0.1:5000/genres?title=Avengers
+```
 
 ## Accessing the Genres Endpoint
 
@@ -30,4 +37,6 @@ GET: http://127.0.0.1:5000/films
 GET: http://127.0.0.1:5000/genres
 ```
 
-This will return the films data as a JSON response.
+
+
+
