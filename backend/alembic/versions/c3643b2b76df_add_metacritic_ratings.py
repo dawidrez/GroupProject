@@ -22,11 +22,11 @@ def upgrade() -> None:
     op.add_column(
         "film", sa.Column("metacritic_rating", sa.Numeric(precision=2), nullable=True)
     )
-    op.create_foreign_key(None, "film_genre", "film", ["film_id"], ["id"])
-    op.create_foreign_key(None, "film_genre", "genre", ["genre_id"], ["id"])
+    op.create_foreign_key("fk_film_genre", "film_genre", "film", ["film_id"], ["id"])
+    op.create_foreign_key("fk_genre_film", "film_genre", "genre", ["genre_id"], ["id"])
 
 
 def downgrade() -> None:
-    op.drop_constraint(None, "film_genre", type_="foreignkey")
-    op.drop_constraint(None, "film_genre", type_="foreignkey")
+    op.drop_constraint("fk_film_genre", "film_genre", type_="foreignkey")
+    op.drop_constraint("fk_genre_film", "film_genre", type_="foreignkey")
     op.drop_column("film", "metacritic_rating")

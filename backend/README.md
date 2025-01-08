@@ -24,4 +24,10 @@ Once the backend is running and the films have been imported, you can access the
 GET: http://127.0.0.1:5000/films
 ```
 
+## Accessing the Genres Endpoint
+
+```bash
+GET: http://127.0.0.1:5000/genres
+```
+
 This will return the films data as a JSON response.

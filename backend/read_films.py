@@ -3,17 +3,21 @@ from enum import Enum
 
 import pandas as pd
 from app.models import Film, Genre
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@db:5432/app_db"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URI, echo=True)
 Session = sessionmaker(bind=engine)
+CSV_FILMWEB = "filmweb_films.csv"
+CSV_IMDB = "imdb_films.csv"
+CSV_METACRITIC = "metacritic_films.csv"
 
 
 class Website(Enum):
     imdb = "imdb"
+    metacritic = "metacritic"
 
 
 def load_films_from_csv(csv_file_path: str) -> None:
@@ -54,20 +58,30 @@ def load_ratings_from_other_sites(csv_file_path: str, website: Website) -> None:
     df = pd.read_csv(csv_file_path, delimiter=";")
 
     for _, row in df.iterrows():
-        film = session.query(Film).filter_by(original_title=row.original_title).first()
+        film = (
+            session.query(Film)
+            .filter(
+                or_(
+                    Film.original_title.ilike(row.original_title),
+                    Film.english_title.ilike(row.original_title),
+                )
+            )
+            .first()
+        )
         if not film:
+            print(f"{row.original_title} not found")
             continue
         if website == Website.imdb:
-            print(film.original_title)
             film.imdb_rating = row["rating"]
             film.english_title = row["english_title"]
+        elif website == Website.metacritic:
+            film.metacritic_rating = row["rating"]
         session.merge(film)
 
 
 if __name__ == "__main__":
-    csv_filmweb = "filmweb_films.csv"
-    csv_imdb = "imdb_films.csv"
     with Session() as session:
-        load_films_from_filmweb(csv_filmweb)
-        load_ratings_from_other_sites(csv_imdb, Website.imdb)
+        load_films_from_csv(CSV_FILMWEB)
+        load_ratings_from_other_sites(CSV_IMDB, Website.imdb)
+        load_ratings_from_other_sites(CSV_METACRITIC, Website.metacritic)
         session.commit()
