@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { MoviesList } from './components/movies/MoviesList';
+import { Movies } from './components/movies/Movies';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/"
-        element={<MoviesList />} />
+        element={<Movies />} />
     </Routes>
   );
 };

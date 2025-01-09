@@ -8,3 +8,8 @@ export interface Movie {
   src: string;
   genres: { id: string, name: string }[];
 }
+
+export interface Genre {
+  id: string;
+  name: string;
+}
