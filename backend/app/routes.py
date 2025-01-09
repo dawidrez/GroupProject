@@ -11,7 +11,7 @@ film = Blueprint("film", __name__)
 @film.route("/films", methods=["GET"])
 def list_films() -> Response:
     page = int(request.args.get("page", 1))
-    per_page = int(request.args.get("per_page", 10))
+    per_page = int(request.args.get("per_page", 6))
     genre = request.args.get("genre")
     title = request.args.get("title")
 
