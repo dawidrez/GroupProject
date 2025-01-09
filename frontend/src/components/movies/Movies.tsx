@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import React, { useEffect, useState } from 'react';
 import {  Flex, Input, Spin, Pagination } from 'antd';
-import { Genre, Movie } from '../../models/Movies.model';
+import { Movie } from '../../models/Movies.model';
 import { Controller, useForm } from 'react-hook-form';
 import { MoviesList } from './MoviesList';
 import { getFilmsData } from '../../utils/movieService.utils';
@@ -11,23 +11,21 @@ export const Movies = () => {
   const [moviesList, setMoviesList] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [moviesTotalCount, setMoviesTotalCount] = useState<number>(0);
-  const [genre, setGenre] = useState<string>('');
+  const [genre, setGenre] = useState<string | undefined>(undefined);
 
   const { control, watch } = useForm();
 
   const search: string = watch('search');
 
   useEffect(() => {
-    console.log('here');
-    console.log(genre);
     setIsLoading(true);
-    getFilmsData(1, genre)
+    getFilmsData(1, genre, search)
       .then(({ items, totalItems }) => {
         setMoviesList(items);
         setMoviesTotalCount(totalItems);
       })
       .finally(() => setIsLoading(false));
-  }, [genre]);
+  }, [genre, search]);
 
   useEffect(() => {
     if (search) {
@@ -36,7 +34,7 @@ export const Movies = () => {
   }, [search]);
 
   const onPageChange = (pageNumber: number) => {
-    getFilmsData(pageNumber, genre.name)
+    getFilmsData(pageNumber, genre)
     .then(({ items, totalItems }) => {
       setMoviesList(items);
       setMoviesTotalCount(totalItems);
@@ -66,7 +64,9 @@ export const Movies = () => {
               {...field}
               placeholder="Search for films"
               style={{ maxWidth: 400 }}
-              onChange={(e) => field.onChange(e.target.value)}/>
+              onChange={(e) => {
+                field.onChange(e.target.value);
+              }}/>
           )}/>
         <Genres setGenre={setGenre} genre={genre} />
       </Flex>

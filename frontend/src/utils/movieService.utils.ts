@@ -1,7 +1,7 @@
 import { getFilms } from '../services/filmsService';
 
-export const getFilmsData = async (pageNumber: number = 1, genre: string) => {
-  return getFilms(pageNumber, genre)
+export const getFilmsData = async (pageNumber: number = 1, genre: string = '', title: string = '') => {
+  return getFilms(pageNumber, genre, title)
     .then((res) => {
       return {
         items: res.data.items,
