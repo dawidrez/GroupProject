@@ -35,7 +35,7 @@ export const MoviesList = ({ movies }: { movies: Movie[] }) => {
                     <Typography>Imb rate</Typography>
                     <Rate count={10} value={movie.imdb_rating} disabled allowHalf/>
                     <Typography>Metacritics rate</Typography>
-                    <Rate count={10} value={movie.filmweb_rating} disabled allowHalf/>
+                    <Rate count={10} value={movie.metacritic_rating} disabled allowHalf/>
                   </Flex>
                 </Flex>
               </Flex>

@@ -5,6 +5,7 @@ export interface Movie {
   year: number;
   filmweb_rating: number;
   imdb_rating: number;
+  metacritic_rating: number;
   src: string;
   genres: { id: string, name: string }[];
 }
