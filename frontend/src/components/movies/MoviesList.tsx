@@ -31,11 +31,26 @@ export const MoviesList = ({ movies }: { movies: Movie[] }) => {
                   </Flex>
                   <Flex vertical gap={10}>
                     <Typography>Filmbeb rate</Typography>
-                    <Rate count={10} value={movie.filmweb_rating} disabled allowHalf/>
+                    <Flex gap={20}>
+                      <Rate count={10} value={movie.filmweb_rating} disabled allowHalf/>
+                      {
+                        movie.filmweb_rating ? movie.filmweb_rating : null
+                      }
+                    </Flex>
                     <Typography>Imb rate</Typography>
-                    <Rate count={10} value={movie.imdb_rating} disabled allowHalf/>
+                    <Flex gap={20}>
+                      <Rate count={10} value={movie.imdb_rating} disabled allowHalf/>
+                      {
+                        movie.imdb_rating ? movie.imdb_rating : null
+                      }
+                    </Flex>
                     <Typography>Metacritics rate</Typography>
-                    <Rate count={10} value={movie.metacritic_rating} disabled allowHalf/>
+                    <Flex gap={20}>
+                      <Rate count={10} value={movie.metacritic_rating} disabled allowHalf/>
+                      {
+                        movie.metacritic_rating ? movie.imdb_rating : null
+                      }
+                    </Flex>
                   </Flex>
                 </Flex>
               </Flex>
